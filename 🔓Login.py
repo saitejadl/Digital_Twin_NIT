@@ -66,7 +66,7 @@ if st.session_state.get('password') == None:
                     elif user_name!='':
                         st.error("Invalid Username")
             if st.session_state.get('password')!=None and st.session_state.get('password')==True:
-                st.switch_page(rf"pages\⛩Architectures.py")
+                st.switch_page("pages\\⛩Architectures.py")
 
 else:
     st.info("🔑SIGNED IN SUCCESSFULLY")
