@@ -155,4 +155,6 @@ if st.session_state.get('password')!=None:
             # st.toast(f"Latitude: {output["last_object_clicked"]['lat']} Longitute: {output["last_object_clicked"]['lat']}")
 else:
     st.header("Please signin and visit this page again to view the owned assets")
-    st.info("Needed Signin for authentication")
+    st.info("Needed Signin for authentication redirecting to signin page in few minutes.")
+    time.sleep(10):
+    st.switch_page(rf"🔓Login.py")
