@@ -109,12 +109,12 @@ if st.session_state.get('password')!=None:
     m = folium.Map(location=[11.442902968845491, 76.06647154478142], zoom_start=5)
     Draw(export=True).add_to(m)
     for i,j in list(zip(loc.keys(),loc.values())):
-        if st.session_state.get('icon')==None:
-            st.session_state['icon']=folium.Icon(color=random.choice(['red', 'blue', 'green', 'yellow']))
-        folium.Marker(j, popup=f"<span style='font-size: 10px; color: gray'>{i}\n{j}</span>", tooltip=i,icon=st.session_state['icon']).add_to(m)
+        # if st.session_state.get('icon')==None:
+        #     st.session_state['icon']=folium.Icon(color=random.choice(['red', 'blue', 'green', 'yellow']))
+        folium.Marker(j, popup=f"<span style='font-size: 10px; color: gray'>{i}\n{j}</span>", tooltip=i).add_to(m)
     output = st_folium(m, width='100%', height=650, returned_objects=["last_object_clicked"])
     st.session_state['last_object_clicked'] = output
-    if output.get('last_object_clicked').get('lat')!=None:
+    if output.get('last_object_clicked')!=None:
         coordinates = [output["last_object_clicked"]['lat'], output["last_object_clicked"]['lng']]
         st.session_state['loc'] = list(loc.keys())[list(loc.values()).index(coordinates)]
         col1, col2, col3= st.columns(3)
