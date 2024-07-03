@@ -88,9 +88,6 @@ if logout.button("Logout"):
     del st.session_state['user_name']
     st.switch_page(rf"🔓Login.py")
     st.rerun()
-if st.session_state.get('testrun')==None:
-    st.session_state['testrun']="run"
-    st.rerun()
 # st.session_state['last_object_clicked'] = False
 if st.session_state.get('password')!=None:
     st.sidebar.info("🔑SIGNED IN")
@@ -117,7 +114,7 @@ if st.session_state.get('password')!=None:
         folium.Marker(j, popup=f"<span style='font-size: 10px; color: gray'>{i}\n{j}</span>", tooltip=i,icon=st.session_state['icon']).add_to(m)
     output = st_folium(m, width='100%', height=650, returned_objects=["last_object_clicked"])
     st.session_state['last_object_clicked'] = output
-    if output.get('last_object_clicked')!=None:
+    if output.get('last_object_clicked').get('lat')!=None:
         coordinates = [output["last_object_clicked"]['lat'], output["last_object_clicked"]['lng']]
         st.session_state['loc'] = list(loc.keys())[list(loc.values()).index(coordinates)]
         col1, col2, col3= st.columns(3)
