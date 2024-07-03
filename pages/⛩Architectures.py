@@ -71,7 +71,7 @@ import streamlit as st
 from streamlit_folium import st_folium
 # import pyvista as pv
 # from stpyvista import stpyvista
-# import random
+import random
 # import requests
 # import json
 # from pathlib import Path
@@ -109,18 +109,12 @@ if st.session_state.get('password')!=None:
     "Kuniyil Kadavu Bridge": "The Kuniyil Kadavu Bridge is an important structure in Kozhikode district, Kerala. It connects the town of Atholi to National Highway 66 and is recognized as the longest bridge in the district1. The bridge is part of the state highway to Kuttiyadi and plays a significant role in the connectivity of the region"
     }
     st.session_state['locations'] = loc
-    progress_text = "Operation in progress. Please wait."
-    my_bar = st.progress(0, text=progress_text)
-    for percent_complete in range(100):
-        my_bar.progress(percent_complete + 1, text=progress_text)
-    time.sleep(1)
-    my_bar.empty()
     m = folium.Map(location=[11.442902968845491, 76.06647154478142], zoom_start=5)
     Draw(export=True).add_to(m)
     for i,j in list(zip(loc.keys(),loc.values())):
-        #icon=folium.Icon(color=random.choice(['red', 'blue', 'green', 'yellow']))
+        icon=folium.Icon(color=random.choice(['red', 'blue', 'green', 'yellow']))
         time.sleep(1)
-        folium.Marker(j, popup=f"<span style='font-size: 10px; color: gray'>{i}\n{j}</span>", tooltip=i).add_to(m)
+        folium.Marker(j, popup=f"<span style='font-size: 10px; color: gray'>{i}\n{j}</span>", tooltip=i,icon=icon).add_to(m)
     output = st_folium(m, width='100%', height=650, returned_objects=["last_object_clicked"])
     st.session_state['last_object_clicked'] = output
     if output.get('last_object_clicked')!=None:
