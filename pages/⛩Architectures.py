@@ -10,7 +10,7 @@
 # # from pathlib import Path
 # # from PIL import Image
 # # from streamlit_lottie import st_lottie
-# import time
+# # import time
 
 # st.set_page_config(page_title="NIREEKSHAN - Architecture",page_icon="⛩",layout="wide", initial_sidebar_state="collapsed", menu_items=None)
 
@@ -80,7 +80,7 @@ from streamlit_folium import st_folium
 # import time
 
 st.set_page_config(page_title="NIREEKSHAN - Architecture",page_icon="⛩",layout="wide", initial_sidebar_state="collapsed", menu_items=None)
-_, _, logout= st.columns([5,5,1])
+_, __, logout= st.columns([5,5,1])
 if logout.button("Logout"):
     st.session_state['password']=None
     st.session_state['user_name']=None
@@ -88,12 +88,13 @@ if logout.button("Logout"):
     del st.session_state['user_name']
     st.switch_page(rf"🔓Login.py")
     st.rerun()
-
+if st.session_state.get('testrun')==None:
+    st.session_state.get('testrun')="run"
+    st.rerun()
 # st.session_state['last_object_clicked'] = False
 if st.session_state.get('password')!=None:
     st.sidebar.info("🔑SIGNED IN")
-    _,greet,_ = st.columns([2,2,1])
-    greet.title(f"Hi {st.session_state['user_name'].title()}")
+    __.title(f"Hi {st.session_state['user_name'].title()}")
     st.write("Architectures Map")
     loc = {
     "Kandappanchal Arch Bridge": [11.442902968845491, 76.06647154478142],
