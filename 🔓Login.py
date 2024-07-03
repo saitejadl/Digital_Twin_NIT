@@ -51,7 +51,7 @@ if st.session_state.get('password') == None:
             password = e.text_input('Password', value="", type="password")
             
             with h:
-                if st.form_submit_button("signin",type="primary"):
+                if st.form_submit_button("signin")#,type="primary"):
                     if user_name in u_p.keys():
                         st.session_state['user_name'] = user_name
                         if password==u_p[user_name]:
