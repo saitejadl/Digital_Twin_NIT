@@ -77,7 +77,7 @@ from streamlit_folium import st_folium
 # from pathlib import Path
 # from PIL import Image
 # from streamlit_lottie import st_lottie
-# import time
+import time
 
 st.set_page_config(page_title="NIREEKSHAN - Architecture",page_icon="⛩",layout="wide", initial_sidebar_state="collapsed", menu_items=None)
 _, __, logout= st.columns([5,5,1])
