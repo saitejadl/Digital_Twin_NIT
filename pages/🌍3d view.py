@@ -105,12 +105,6 @@ if st.session_state.get('password')!=None:
         if st.session_state.get('last_object_clicked')['last_object_clicked'] != None:
             output = st.session_state['last_object_clicked']
             loc = st.session_state['locations']
-            # progress_text = "Operation in progress. Please wait."
-            # my_bar = st.progress(0, text=progress_text)
-            # for percent_complete in range(10):
-            #     my_bar.progress(percent_complete + 1, text=progress_text)
-            # time.sleep(3)
-            # my_bar.empty()
             loc = {"Kandappanchal Arch Bridge": """<div class="sketchfab-embed-wrapper"> <iframe title="Bridge" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="100%" height="100%" src="https://sketchfab.com/models/545a57d9785443bca9b135da2e497bc0/embed?autostart=1&preload=1&ui_theme=dark"> </iframe></div>""",
                     "Feroke Railway bridge": """<div class="sketchfab-embed-wrapper"> <iframe title="NYC, The High Bridge" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="100%" height="800" src="https://sketchfab.com/models/1a98cc4fe0064c009f4c2da35f0fc232/embed?autostart=1&preload=1&transparent=1&ui_theme=dark"> </iframe></div>""",
                     "Areekode Bridge": """<div class="sketchfab-embed-wrapper"> <iframe title="Martha McClean Bridge" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="100%" height="800" src="https://sketchfab.com/models/b025b69e36874fac8886bdb1bd17c2e3/embed?autostart=1&preload=1&ui_theme=dark"> </iframe> </div>""",
