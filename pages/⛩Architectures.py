@@ -119,6 +119,7 @@ if st.session_state.get('password')!=None:
     Draw(export=True).add_to(m)
     for i,j in list(zip(loc.keys(),loc.values())):
         #icon=folium.Icon(color=random.choice(['red', 'blue', 'green', 'yellow']))
+        time.sleep(1)
         folium.Marker(j, popup=f"<span style='font-size: 10px; color: gray'>{i}\n{j}</span>", tooltip=i).add_to(m)
     output = st_folium(m, width='100%', height=650, returned_objects=["last_object_clicked"])
     st.session_state['last_object_clicked'] = output
