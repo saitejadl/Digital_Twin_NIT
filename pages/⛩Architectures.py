@@ -88,9 +88,9 @@ if logout.button("Logout"):
     del st.session_state['user_name']
     st.switch_page(rf"🔓Login.py")
     st.rerun()
-if st.session_state.get('testrun')==None:
-    st.session_state.get('testrun')="run"
-    st.rerun()
+# if st.session_state.get('testrun')==None:
+#     st.session_state['testrun']="run"
+#     st.rerun()
 # st.session_state['last_object_clicked'] = False
 if st.session_state.get('password')!=None:
     st.sidebar.info("🔑SIGNED IN")
@@ -109,6 +109,12 @@ if st.session_state.get('password')!=None:
     "Kuniyil Kadavu Bridge": "The Kuniyil Kadavu Bridge is an important structure in Kozhikode district, Kerala. It connects the town of Atholi to National Highway 66 and is recognized as the longest bridge in the district1. The bridge is part of the state highway to Kuttiyadi and plays a significant role in the connectivity of the region"
     }
     st.session_state['locations'] = loc
+    progress_text = "Operation in progress. Please wait."
+    my_bar = st.progress(0, text=progress_text)
+    for percent_complete in range(100):
+        my_bar.progress(percent_complete + 1, text=progress_text)
+    time.sleep(1)
+    my_bar.empty()
     m = folium.Map(location=[11.442902968845491, 76.06647154478142], zoom_start=5)
     Draw(export=True).add_to(m)
     for i,j in list(zip(loc.keys(),loc.values())):
