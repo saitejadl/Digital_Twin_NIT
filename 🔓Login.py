@@ -10,7 +10,7 @@ from streamlit_folium import st_folium
 # from pathlib import Path
 # from PIL import Image
 # from streamlit_lottie import st_lottie
-# import time
+import time
 
 
 st.set_page_config(page_title="NIRKEESHAN - PROJECT DIGITAL TWIN",page_icon="🌎",layout="wide", initial_sidebar_state="collapsed" if st.session_state.get("logged_in")!=True else "auto")
