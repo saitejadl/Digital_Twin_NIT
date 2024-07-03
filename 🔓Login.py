@@ -59,7 +59,7 @@ if st.session_state.get('password') == None:
                             st.sidebar.info("🔑SIGNED IN ")
                             h.success("SIGNED IN SUCCESSFULLY")
                             st.session_state.logged_in = True
-                            st.sidebar.page_link("pages/⛩Architectures.py")
+                            # st.sidebar.page_link("pages/⛩Architectures.py")
                             st.switch_page(rf"pages\⛩Architectures.py")
                         elif password!='':
                             st.error("Invalid Password")      
