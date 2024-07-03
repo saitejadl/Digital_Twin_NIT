@@ -1,9 +1,3 @@
-import folium
-from folium.plugins import Draw
-import streamlit as st
-from streamlit_folium import st_folium
-# import pyvista as pv
-# from stpyvista import stpyvista
 # import random
 # import requests
 # import json
@@ -60,13 +54,13 @@ if st.session_state.get('password') == None:
                             h.success("SIGNED IN SUCCESSFULLY")
                             st.session_state.logged_in = True
                             # st.sidebar.page_link("pages/⛩Architectures.py")
-                            # st.switch_page(rf"pages\⛩Architectures.py")
+                            st.switch_page(rf"pages/⛩Architectures.py")
                         elif password!='':
                             st.error("Invalid Password")      
                     elif user_name!='':
                         st.error("Invalid Username")
-            if st.session_state.get('password')!=None and st.session_state.get('password')==True:
-                st.switch_page("pages\\⛩Architectures.py")
+            # if st.session_state.get('password')!=None and st.session_state.get('password')==True:
+            #     st.switch_page("pages\\⛩Architectures.py")
 
 else:
     st.info("🔑SIGNED IN SUCCESSFULLY")
