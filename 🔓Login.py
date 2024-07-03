@@ -98,7 +98,7 @@ from streamlit_folium import st_folium
 import time
 
 
-st.set_page_config(page_title="NIRKEESHAN - PROJECT DIGITAL TWIN",page_icon="🌎",layout="wide", initial_sidebar_state="collapsed" if st.session_state.get("logged_in")!=True else "auto")
+st.set_page_config(page_title="NIREEKSHAN - PROJECT DIGITAL TWIN",page_icon="🌎",layout="wide", initial_sidebar_state="collapsed" if st.session_state.get("logged_in")!=True else "auto")
 
 def stream_data(heading):
     if st.session_state.get('user_name') == None:
@@ -108,10 +108,13 @@ def stream_data(heading):
     for letter in [x for x in heading]:
         yield letter + ""
         time.sleep(0.01)
+_, __, ___= st.columns([3,2,3])
 
-c1,c2,c3 = st.columns([1,3,1])
-c2.header("NIREEKSHAN - PROJECT DIGITAL TWIN")
-c2.write_stream(stream_data("THE BEST WAY TO PREDICT THE FUTURE IS TO CREATE IT."))
+__.image('Nireekshan_blue_logo.png', caption=' ')
+__.write_stream(stream_data("""THE BEST WAY TO PREDICT THE FUTURE \n IS TO CREATE IT."""))
+# c1,c2,c3 = st.columns([1,3,1])
+# c2.header("NIREEKSHAN - PROJECT DIGITAL TWIN")
+# c2.write_stream(stream_data("THE BEST WAY TO PREDICT THE FUTURE IS TO CREATE IT."))
 
 u_p = {"pratheek":"0000",
        "teja":"1234",
