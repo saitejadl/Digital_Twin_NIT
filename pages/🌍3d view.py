@@ -156,5 +156,5 @@ if st.session_state.get('password')!=None:
 else:
     st.header("Please signin and visit this page again to view the owned assets")
     st.info("Needed Signin for authentication redirecting to signin page in few minutes.")
-    time.sleep(10):
+    time.sleep(10)
     st.switch_page(rf"🔓Login.py")
