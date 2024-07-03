@@ -143,4 +143,6 @@ if st.session_state.get('password')!=None:
         ask.write(r"Please select any geographical location to view the architecture")
 else:
     st.header("Please signin and visit this page again to view the owned assets")
-    st.info("Needed Signin for authentication")
+    st.info("Needed Signin for authentication redirect to signin page in few minutes.")
+    time.sleep(10):
+    st.switch_page(rf"🔓Login.py")
