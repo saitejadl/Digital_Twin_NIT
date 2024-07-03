@@ -12,7 +12,7 @@ from streamlit_folium import st_folium
 # import numpy as np
 # import pandas as pd
 # from streamlit_lottie import st_lottie
-# import time
+import time
 st.set_page_config(page_title="NIREEKSHAN - 3D View",page_icon="🌎",layout="wide", initial_sidebar_state="collapsed", menu_items=None)
 
 if st.session_state.get('password')!=None:
