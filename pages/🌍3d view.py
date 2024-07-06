@@ -100,6 +100,7 @@ if logout.button("Logout"):
     st.rerun()
 if st.session_state.get('load')==None:
   st.session_state['load']=True
+  time.sleep(2)
   st.switch_page(rf"pages/⛩Architectures.py")
 if st.session_state.get('password')!=None:
     st.sidebar.info("🔑SIGNED IN")
