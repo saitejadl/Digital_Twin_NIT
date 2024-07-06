@@ -114,7 +114,8 @@ if st.session_state.get('password')!=None:
     for i,j in list(zip(loc.keys(),loc.values())):
         # if st.session_state.get('icon')==None:
         #     st.session_state['icon']=folium.Icon(color=random.choice(['red', 'blue', 'green', 'yellow']))
-        folium.Marker(j, popup=f"<span style='font-size: 10px; color: gray'>{i}\n{j}</span>", tooltip=i, icon=folium.Icon(color='blue')).add_to(m)
+        # icon = folium.features.CustomIcon('streamlit-logo.png', icon_size=(20, 20))
+        folium.Marker(j, popup=f"<span style='font-size: 10px; color: gray'>{i}\n{j}</span>", tooltip=i, icon="https://th.bing.com/th?id=ODLS.37c4003d-9d44-4110-853c-467f546512b1&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2").add_to(m)
     output = st_folium(m, width='100%', height=650, returned_objects=["last_object_clicked"])
     st.session_state['last_object_clicked'] = output
     if output.get('last_object_clicked')!=None:
