@@ -86,8 +86,11 @@ if logout.button("Logout"):
     st.session_state['user_name']=None
     del st.session_state['password']
     del st.session_state['user_name']
-    st.switch_page(rf"🔓Login.py")
+    st.switch_page(rf"🌍3d view.py")
     st.rerun()
+if st.session_state.get('load') == None:
+    st.switch_page(rf"🔓Login.py")
+    
 # st.session_state['last_object_clicked'] = False
 if st.session_state.get('password')!=None:
     st.sidebar.info("🔑SIGNED IN")
