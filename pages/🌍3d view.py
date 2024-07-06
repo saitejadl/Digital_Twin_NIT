@@ -98,7 +98,9 @@ if logout.button("Logout"):
     del st.session_state['user_name']
     st.switch_page(rf"🔓Login.py")
     st.rerun()
-
+if st.session_state.get('loiad')==None:
+  st.session_state.get('load')=True
+  st.switch_page(rf"⛩Architectures.py")
 if st.session_state.get('password')!=None:
     st.sidebar.info("🔑SIGNED IN")
     if st.session_state.get('last_object_clicked') != None:
