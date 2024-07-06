@@ -89,7 +89,7 @@ if logout.button("Logout"):
     st.switch_page(rf"🔓Login.py")
     st.rerun()
 if st.session_state.get('load') == None:
-    st.switch_page(rf"🌍3d view.py")
+    st.switch_page(rf"pages/🌍3d view.py")
     
 # st.session_state['last_object_clicked'] = False
 if st.session_state.get('password')!=None:
