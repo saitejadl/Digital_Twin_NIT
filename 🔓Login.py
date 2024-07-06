@@ -5,7 +5,7 @@ from streamlit_folium import st_folium
 import time
 
 st.set_page_config(page_title="NIREEKSHAN - PROJECT DIGITAL TWIN",page_icon="🌎",layout="wide", initial_sidebar_state="collapsed" if st.session_state.get("logged_in")!=True else "auto")
-
+st.logo('Nireekshan_blue_logo.png', link='https://samudra-digital-twin.streamlit.app/', icon_image='Nireekshan_blue_logo.png')
 def stream_data(heading):
     if st.session_state.get('user_name') == None:
         heading=heading
@@ -22,10 +22,12 @@ __.write_stream(stream_data("""THE BEST WAY TO PREDICT THE FUTURE \n IS TO CREAT
 # c2.header("NIREEKSHAN - PROJECT DIGITAL TWIN")
 # c2.write_stream(stream_data("THE BEST WAY TO PREDICT THE FUTURE IS TO CREATE IT."))
 
-u_p = {"pratheek":"0000",
+u_p = {"prateek":"0000",
        "teja":"1234",
        "chinmay":"4321",
-       "haneena":"6789",}
+       "haneena":"1234",
+       "kavya":"1234",
+       "subham":"1234"}
 # st.write("##")
 # st.session_state['user_name'] = False
 # st.session_state['password'] = False
