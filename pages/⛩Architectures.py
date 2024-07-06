@@ -36,7 +36,7 @@ if st.session_state.get('password')!=None:
     }
     st.session_state['locations'] = loc
     m = folium.Map(location=[11.442902968845491, 76.06647154478142], zoom_start=5)
-    Draw(export=True).add_to(m)
+    # Draw(export=True).add_to(m)
     for i,j in list(zip(loc.keys(),loc.values())):
         # if st.session_state.get('icon')==None:
         #     st.session_state['icon']=folium.Icon(color=random.choice(['red', 'blue', 'green', 'yellow']))
@@ -61,6 +61,6 @@ if st.session_state.get('password')!=None:
         ask.write(r"Please select any geographical location to view the architecture")
 else:
     st.header("Please signin and visit this page again to view the owned assets")
-    st.info("Needed Signin for authentication redirect to signin page in few minutes.")
+    st.info("Needed Signin for authentication redirect to signin page in few seconds.")
     time.sleep(10)
     st.switch_page(rf"🔓Login.py")
