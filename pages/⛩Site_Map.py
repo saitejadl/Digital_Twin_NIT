@@ -22,6 +22,9 @@ if st.session_state.get('password')!=None:
     st.sidebar.info("🔑SIGNED IN")
     __.title(f"Hi {st.session_state['user_name'].title()}")
     col1, col2, col3= st.columns(3)
+    with col1: pass
+    with col2: pass
+    with col3: pass
     loc = {
     "Kandappanchal Arch Bridge": [11.442902968845491, 76.06647154478142],
     "Feroke Railway bridge": [11.180595768970802, 75.82888960998298],
@@ -46,11 +49,11 @@ if st.session_state.get('password')!=None:
     st.session_state['last_object_clicked'] = output
     
     if output.get('last_object_clicked')!=None:
-        coordinates = [st.session_state["last_object_clicked"]['lat'], st.session_state["last_object_clicked"]['lng']]
+        coordinates = [output["last_object_clicked"]['lat'], output["last_object_clicked"]['lng']]
         st.session_state['loc'] = list(loc.keys())[list(loc.values()).index(coordinates)]
-        col1.metric(label="***Lattitude***", value=st.session_state["last_object_clicked"]['lat'])
-        col2.metric(label="***Longitude***", value=st.session_state["last_object_clicked"]['lng'])
-        col3.metric(label="***Name***", value=next((k for k, v in loc.items() if v == [st.session_state["last_object_clicked"]['lat'],st.session_state["last_object_clicked"]['lng']]), None))
+        col1.metric(label="***Lattitude***", value=output["last_object_clicked"]['lat'])
+        col2.metric(label="***Longitude***", value=output["last_object_clicked"]['lng'])
+        col3.metric(label="***Name***", value=next((k for k, v in loc.items() if v == [output["last_object_clicked"]['lat'],output["last_object_clicked"]['lng']]), None))
         st.write(des[st.session_state['loc']])
         col = st.columns([2,1,2])
         with col[1]:
