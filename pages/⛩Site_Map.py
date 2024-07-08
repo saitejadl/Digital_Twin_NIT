@@ -45,10 +45,9 @@ if st.session_state.get('password')!=None:
     output = st_folium(m, width='100%', height=650, returned_objects=["last_object_clicked"])
     st.session_state['last_object_clicked'] = output
     
-    if st.output.get('last_object_clicked')['lng']!=None:
+    if output.get('last_object_clicked')!=None:
         coordinates = [st.session_state["last_object_clicked"]['lat'], st.session_state["last_object_clicked"]['lng']]
         st.session_state['loc'] = list(loc.keys())[list(loc.values()).index(coordinates)]
-        col1, col2, col3= st.columns(3)
         col1.metric(label="***Lattitude***", value=st.session_state["last_object_clicked"]['lat'])
         col2.metric(label="***Longitude***", value=st.session_state["last_object_clicked"]['lng'])
         col3.metric(label="***Name***", value=next((k for k, v in loc.items() if v == [st.session_state["last_object_clicked"]['lat'],st.session_state["last_object_clicked"]['lng']]), None))
