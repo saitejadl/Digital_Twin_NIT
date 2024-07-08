@@ -1,5 +1,5 @@
 import folium
-from folium.plugins import Draw
+# from folium.plugins import Draw
 import streamlit as st
 from streamlit_folium import st_folium
 import time
@@ -77,14 +77,14 @@ if st.session_state.get('password') == None:
                             st.sidebar.info("🔑SIGNED IN ")
                             h.success("SIGNED IN SUCCESSFULLY")
                             st.session_state.logged_in = True
-                            # st.sidebar.page_link("pages/⛩Architectures.py")
-                            st.switch_page(rf"pages/⛩Architectures.py")
+                            # st.sidebar.page_link("pages/⛩Site_Map.py")
+                            st.switch_page(rf"pages/⛩Site_Map.py")
                         elif password!='':
                             st.error("Invalid Password")      
                     elif user_name!='':
                         st.error("Invalid Username")
             # if st.session_state.get('password')!=None and st.session_state.get('password')==True:
-            #     st.switch_page(rf"pages\⛩Architectures.py")
+            #     st.switch_page(rf"pages\⛩Site_Map.py")
 
 else:
     st.info("🔑SIGNED IN SUCCESSFULLY")
