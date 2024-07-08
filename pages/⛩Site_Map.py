@@ -22,7 +22,7 @@ if st.session_state.get('password')!=None:
     st.sidebar.info("🔑SIGNED IN")
     __.title(f"Hi {st.session_state['user_name'].title()}")
     
-    if st.session_state.get('last_object_clicked')!=None:
+    if st.session_state.get('last_object_clicked')['lng']!=None:
         coordinates = [st.session_state["last_object_clicked"]['lat'], st.session_state["last_object_clicked"]['lng']]
         st.session_state['loc'] = list(loc.keys())[list(loc.values()).index(coordinates)]
         col1, col2, col3= st.columns(3)
