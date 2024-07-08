@@ -65,7 +65,7 @@ if st.session_state.get('password')!=None:
         
         
         # with col[2]:
-        if st.button("3D View",type="primary"):
+        if st.button("3D View",type="primary", use_container_width=True):
             st.switch_page(rf"pages/🌍3d view.py")
     else:
         _,ask,_ = st.columns([2,2,1])
