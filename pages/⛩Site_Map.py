@@ -54,7 +54,7 @@ if st.session_state.get('password')!=None:
         st.write(des[st.session_state['loc']])
         col = st.columns([2,1,2])
         with col[1]:
-            if st.button("3D View",type="primary", use_container_width=False):
+            if st.button("3D View",type="primary", use_container_width=True):
                 st.switch_page(rf"pages/🌍3d view.py")
     else:
         _,ask,_ = st.columns([2,2,1])
