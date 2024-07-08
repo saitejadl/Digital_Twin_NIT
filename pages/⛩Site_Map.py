@@ -23,12 +23,12 @@ if st.session_state.get('password')!=None:
     __.title(f"Hi {st.session_state['user_name'].title()}")
     
     if st.session_state.get('last_object_clicked')!=None:
-        coordinates = [output["last_object_clicked"]['lat'], output["last_object_clicked"]['lng']]
+        coordinates = [st.session_state["last_object_clicked"]['lat'], st.session_state["last_object_clicked"]['lng']]
         st.session_state['loc'] = list(loc.keys())[list(loc.values()).index(coordinates)]
         col1, col2, col3= st.columns(3)
-        col1.metric(label="***Lattitude***", value=output["last_object_clicked"]['lat'])
-        col2.metric(label="***Longitude***", value=output["last_object_clicked"]['lng'])
-        col3.metric(label="***Name***", value=next((k for k, v in loc.items() if v == [output["last_object_clicked"]['lat'],output["last_object_clicked"]['lng']]), None))
+        col1.metric(label="***Lattitude***", value=st.session_state["last_object_clicked"]['lat'])
+        col2.metric(label="***Longitude***", value=st.session_state["last_object_clicked"]['lng'])
+        col3.metric(label="***Name***", value=next((k for k, v in loc.items() if v == [st.session_state["last_object_clicked"]['lat'],st.session_state["last_object_clicked"]['lng']]), None))
         st.write(des[st.session_state['loc']])
         col = st.columns([2,1,2])
         with col[1]:
