@@ -21,29 +21,7 @@ if st.session_state.get('load') == None:
 if st.session_state.get('password')!=None:
     st.sidebar.info("🔑SIGNED IN")
     __.title(f"Hi {st.session_state['user_name'].title()}")
-    st.write("Architectures Map")
-    loc = {
-    "Kandappanchal Arch Bridge": [11.442902968845491, 76.06647154478142],
-    "Feroke Railway bridge": [11.180595768970802, 75.82888960998298],
-    "Areekode Bridge": [11.240843405630452, 76.04558893998195],
-    "Kuniyil Kadavu Bridge": [11.385219648663687, 75.7452814852894]
-    }
-    des = {
-    "Kandappanchal Arch Bridge": "The Kandappanchal Arch Bridge is noted as the only arch bridge in Kerala, and it’s unique because it doesn’t have a concrete support beam underneath. Instead, the support arch is visible on top of the bridge. It’s recognized as the largest arch bridge in South India and is quite a beautiful structure",
-    "Feroke Railway bridge": 'The Feroke Railway Bridge is a historical structure located in Feroke, Kerala. It was built by the British in 1883 and has served as a major link between Chaliyam and Kozhikode1. This bridge is part of the rich history of Feroke, a municipality that was once considered by Tipu Sultan as a potential capital in Malabar2. The old bridge stands as a testament to the engineering skills of the time and has recently undergone a facelift to preserve its integrity',
-    "Areekode Bridge": "The Areekode Bridge is a notable landmark in the town of Areekode (officially Areacode), which is situated on the banks of the Chaliyar River in the Malappuram district of Kerala, India1. While there isn’t a dedicated Wikipedia page for the Areekode Bridge itself, the Wikipedia page for Areekode provides information about the town and its features, including the bridge",
-    "Kuniyil Kadavu Bridge": "The Kuniyil Kadavu Bridge is an important structure in Kozhikode district, Kerala. It connects the town of Atholi to National Highway 66 and is recognized as the longest bridge in the district1. The bridge is part of the state highway to Kuttiyadi and plays a significant role in the connectivity of the region"
-    }
-    st.session_state['locations'] = loc
-    m = folium.Map(location=[11.442902968845491, 76.06647154478142], zoom_start=5)
-    # Draw(export=True).add_to(m)
-    for i,j in list(zip(loc.keys(),loc.values())):
-        # if st.session_state.get('icon')==None:
-        #     st.session_state['icon']=folium.Icon(color=random.choice(['red', 'blue', 'green', 'yellow']))
-        # icon = folium.features.CustomIcon('streamlit-logo.png', icon_size=(20, 20))
-        folium.Marker(j, popup=f"<span style='font-size: 10px; color: gray'>{i}\n{j}</span>", tooltip=i).add_to(m)
-    output = st_folium(m, width='100%', height=650, returned_objects=["last_object_clicked"])
-    st.session_state['last_object_clicked'] = output
+    st.write("Site Map")
     if output.get('last_object_clicked')!=None:
         coordinates = [output["last_object_clicked"]['lat'], output["last_object_clicked"]['lng']]
         st.session_state['loc'] = list(loc.keys())[list(loc.values()).index(coordinates)]
@@ -59,6 +37,32 @@ if st.session_state.get('password')!=None:
     else:
         _,ask,_ = st.columns([2,2,1])
         ask.write(r"Please select any geographical location to view the architecture")
+
+    
+    loc = {
+    "Kandappanchal Arch Bridge": [11.442902968845491, 76.06647154478142],
+    "Feroke Railway bridge": [11.180595768970802, 75.82888960998298],
+    "Areekode Bridge": [11.240843405630452, 76.04558893998195],
+    "Kuniyil Kadavu Bridge": [11.385219648663687, 75.7452814852894]
+    }
+    des = {
+    "Kandappanchal Arch Bridge": "The Kandappanchal Arch Bridge is noted as the only arch bridge in Kerala, and it’s unique because it doesn’t have a concrete support beam underneath. Instead, the support arch is visible on top of the bridge. It’s recognized as the largest arch bridge in South India and is quite a beautiful structure",
+    "Feroke Railway bridge": 'The Feroke Railway Bridge is a historical structure located in Feroke, Kerala. It was built by the British in 1883 and has served as a major link between Chaliyam and Kozhikode1. This bridge is part of the rich history of Feroke, a municipality that was once considered by Tipu Sultan as a potential capital in Malabar2. The old bridge stands as a testament to the engineering skills of the time and has recently undergone a facelift to preserve its integrity',
+    "Areekode Bridge": "The Areekode Bridge is a notable landmark in the town of Areekode (officially Areacode), which is situated on the banks of the Chaliyar River in the Malappuram district of Kerala, India1. While there isn’t a dedicated Wikipedia page for the Areekode Bridge itself, the Wikipedia page for Areekode provides information about the town and its features, including the bridge",
+    "Kuniyil Kadavu Bridge": "The Kuniyil Kadavu Bridge is an important structure in Kozhikode district, Kerala. It connects the town of Atholi to National Highway 66 and is recognized as the longest bridge in the district1. The bridge is part of the state highway to Kuttiyadi and plays a significant role in the connectivity of the region"
+    }
+    st.session_state['locations'] = loc
+    m = folium.Map(location=[11.442902968845491, 76.06647154478142], zoom_start=5)
+    # Draw(export=True).add_to(m)
+    st.write("Site Map")
+    for i,j in list(zip(loc.keys(),loc.values())):
+        # if st.session_state.get('icon')==None:
+        #     st.session_state['icon']=folium.Icon(color=random.choice(['red', 'blue', 'green', 'yellow']))
+        # icon = folium.features.CustomIcon('streamlit-logo.png', icon_size=(20, 20))
+        folium.Marker(j, popup=f"<span style='font-size: 10px; color: gray'>{i}\n{j}</span>", tooltip=i).add_to(m)
+    output = st_folium(m, width='100%', height=650, returned_objects=["last_object_clicked"])
+    st.session_state['last_object_clicked'] = output
+   
 else:
     st.header("Please signin and visit this page again to view the owned assets")
     st.info("Needed Signin for authentication redirect to signin page in few seconds.")
