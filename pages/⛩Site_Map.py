@@ -5,7 +5,7 @@ from streamlit_folium import st_folium
 import random
 import time
 
-st.set_page_config(page_title="NIREEKSHAN - Architecture",page_icon="⛩",layout="wide", initial_sidebar_state="collapsed", menu_items=None)
+st.set_page_config(page_title="NIREEKSHAN - Site Map",page_icon="⛩",layout="wide", initial_sidebar_state="collapsed", menu_items=None)
 _, __, logout= st.columns([5,5,1])
 if logout.button("Logout"):
     st.session_state['password']=None
