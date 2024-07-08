@@ -5,6 +5,15 @@ from streamlit_folium import st_folium
 import time
 
 st.set_page_config(page_title="NIREEKSHAN - PROJECT DIGITAL TWIN",page_icon="🌎",layout="wide", initial_sidebar_state="collapsed" if st.session_state.get("logged_in")!=True else "auto")
+st.markdown("""
+<style>
+body {
+  background: #ff0099; 
+  background: -webkit-linear-gradient(to right, #ff0099, #493240); 
+  background: linear-gradient(to right, #ff0099, #493240); 
+}
+</style>
+    """, unsafe_allow_html=True)
 st.logo('Nireekshan_blue_logo.png', link='https://samudra-digital-twin.streamlit.app/', icon_image='Nireekshan_blue_logo.png')
 def stream_data(heading):
     if st.session_state.get('user_name') == None:
