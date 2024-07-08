@@ -25,6 +25,10 @@ if st.session_state.get('password')!=None:
     with col1: pass
     with col2: pass
     with col3: pass
+    col = st.columns([2,1,2])
+    with col[1]: pass
+    with col[2]: pass
+    with col[3]: pass
     loc = {
     "Kandappanchal Arch Bridge": [11.442902968845491, 76.06647154478142],
     "Feroke Railway bridge": [11.180595768970802, 75.82888960998298],
@@ -55,7 +59,7 @@ if st.session_state.get('password')!=None:
         col2.metric(label="***Longitude***", value=output["last_object_clicked"]['lng'])
         col3.metric(label="***Name***", value=next((k for k, v in loc.items() if v == [output["last_object_clicked"]['lat'],output["last_object_clicked"]['lng']]), None))
         st.write(des[st.session_state['loc']])
-        col = st.columns([2,1,2])
+        
         with col[1]:
             if st.button("3D View",type="primary"):
                 st.switch_page(rf"pages/🌍3d view.py")
