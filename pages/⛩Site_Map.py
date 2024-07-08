@@ -21,6 +21,10 @@ if st.session_state.get('load') == None:
 if st.session_state.get('password')!=None:
     st.sidebar.info("🔑SIGNED IN")
     __.title(f"Hi {st.session_state['user_name'].title()}")
+    col = st.columns([2,2,1])
+    with col[0]: pass
+    with col[1]: pass
+    with col[2]: pass
     col1, col2, col3= st.columns(3)
     with col1: pass
     with col2: pass
@@ -38,10 +42,7 @@ if st.session_state.get('password')!=None:
     "Areekode Bridge": "The Areekode Bridge is a notable landmark in the town of Areekode (officially Areacode), which is situated on the banks of the Chaliyar River in the Malappuram district of Kerala, India1. While there isn’t a dedicated Wikipedia page for the Areekode Bridge itself, the Wikipedia page for Areekode provides information about the town and its features, including the bridge",
     "Kuniyil Kadavu Bridge": "The Kuniyil Kadavu Bridge is an important structure in Kozhikode district, Kerala. It connects the town of Atholi to National Highway 66 and is recognized as the longest bridge in the district1. The bridge is part of the state highway to Kuttiyadi and plays a significant role in the connectivity of the region"
     }
-    col = st.columns([2,1,2])
-    with col[0]: pass
-    with col[1]: pass
-    with col[2]: pass
+
     st.session_state['locations'] = loc
     if st.session_state.get('loc')!=None:
         st.write(des[st.session_state['loc']])
@@ -63,9 +64,9 @@ if st.session_state.get('password')!=None:
         col3.metric(label="***Name***", value=next((k for k, v in loc.items() if v == [output["last_object_clicked"]['lat'],output["last_object_clicked"]['lng']]), None))
         
         
-        with col[1]:
-            if st.button("3D View",type="primary"):
-                st.switch_page(rf"pages/🌍3d view.py")
+        # with col[2]:
+        if st.button("3D View",type="primary"):
+            st.switch_page(rf"pages/🌍3d view.py")
     else:
         _,ask,_ = st.columns([2,2,1])
         ask.write(r"Please select any geographical location to view the architecture")
