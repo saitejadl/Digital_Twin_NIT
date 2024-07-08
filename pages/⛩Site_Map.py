@@ -26,9 +26,9 @@ if st.session_state.get('password')!=None:
     with col2: pass
     with col3: pass
     col = st.columns([2,1,2])
+    with col[0]: pass
     with col[1]: pass
     with col[2]: pass
-    with col[3]: pass
     loc = {
     "Kandappanchal Arch Bridge": [11.442902968845491, 76.06647154478142],
     "Feroke Railway bridge": [11.180595768970802, 75.82888960998298],
