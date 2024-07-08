@@ -21,24 +21,7 @@ if st.session_state.get('load') == None:
 if st.session_state.get('password')!=None:
     st.sidebar.info("🔑SIGNED IN")
     __.title(f"Hi {st.session_state['user_name'].title()}")
-    
-    if st.session_state.get('last_object_clicked')['lng']!=None:
-        coordinates = [st.session_state["last_object_clicked"]['lat'], st.session_state["last_object_clicked"]['lng']]
-        st.session_state['loc'] = list(loc.keys())[list(loc.values()).index(coordinates)]
-        col1, col2, col3= st.columns(3)
-        col1.metric(label="***Lattitude***", value=st.session_state["last_object_clicked"]['lat'])
-        col2.metric(label="***Longitude***", value=st.session_state["last_object_clicked"]['lng'])
-        col3.metric(label="***Name***", value=next((k for k, v in loc.items() if v == [st.session_state["last_object_clicked"]['lat'],st.session_state["last_object_clicked"]['lng']]), None))
-        st.write(des[st.session_state['loc']])
-        col = st.columns([2,1,2])
-        with col[1]:
-            if st.button("3D View",type="primary"):
-                st.switch_page(rf"pages/🌍3d view.py")
-    else:
-        _,ask,_ = st.columns([2,2,1])
-        ask.write(r"Please select any geographical location to view the architecture")
-
-    
+    col1, col2, col3= st.columns(3)
     loc = {
     "Kandappanchal Arch Bridge": [11.442902968845491, 76.06647154478142],
     "Feroke Railway bridge": [11.180595768970802, 75.82888960998298],
@@ -61,6 +44,23 @@ if st.session_state.get('password')!=None:
         folium.Marker(j, popup=f"<span style='font-size: 10px; color: gray'>{i}\n{j}</span>", tooltip=i).add_to(m)
     output = st_folium(m, width='100%', height=650, returned_objects=["last_object_clicked"])
     st.session_state['last_object_clicked'] = output
+    
+    if st.output.get('last_object_clicked')['lng']!=None:
+        coordinates = [st.session_state["last_object_clicked"]['lat'], st.session_state["last_object_clicked"]['lng']]
+        st.session_state['loc'] = list(loc.keys())[list(loc.values()).index(coordinates)]
+        col1, col2, col3= st.columns(3)
+        col1.metric(label="***Lattitude***", value=st.session_state["last_object_clicked"]['lat'])
+        col2.metric(label="***Longitude***", value=st.session_state["last_object_clicked"]['lng'])
+        col3.metric(label="***Name***", value=next((k for k, v in loc.items() if v == [st.session_state["last_object_clicked"]['lat'],st.session_state["last_object_clicked"]['lng']]), None))
+        st.write(des[st.session_state['loc']])
+        col = st.columns([2,1,2])
+        with col[1]:
+            if st.button("3D View",type="primary"):
+                st.switch_page(rf"pages/🌍3d view.py")
+    else:
+        _,ask,_ = st.columns([2,2,1])
+        ask.write(r"Please select any geographical location to view the architecture")
+
    
 else:
     st.header("Please signin and visit this page again to view the owned assets")
