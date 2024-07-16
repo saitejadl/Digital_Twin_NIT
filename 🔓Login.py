@@ -5,6 +5,8 @@ from streamlit_folium import st_folium
 import time
 
 st.set_page_config(page_title="NIREEKSHAN - PROJECT DIGITAL TWIN",page_icon="🌎",layout="wide", initial_sidebar_state="collapsed" if st.session_state.get("logged_in")!=True else "auto")
+st.markdown("<style>@import url('assets/style.css');</style>", unsafe_allow_html=True)
+
 # st.markdown(
 #     """
 #     <style>
