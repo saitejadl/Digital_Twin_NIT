@@ -38,7 +38,7 @@ def stream_data(heading):
         time.sleep(0.01)
 _, __, ___= st.columns([3,2,3])
 
-__.image('Nireekshan_blue_logo.png', caption=' ')
+__.image('Neerakshan_logo.png', caption=' ')
 __.write_stream(stream_data("""THE BEST WAY TO PREDICT THE FUTURE \n IS TO CREATE IT."""))
 # c1,c2,c3 = st.columns([1,3,1])
 # c2.header("NIREEKSHAN - PROJECT DIGITAL TWIN")
