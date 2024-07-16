@@ -27,7 +27,7 @@ st.set_page_config(page_title="NIREEKSHAN - PROJECT DIGITAL TWIN",page_icon="ðŸŒ
 # }
 # </style>
 #     """, unsafe_allow_html=True)
-st.logo('Neerakshan Logo', link='https://samudra-digital-twin.streamlit.app/', icon_image='assets/Neerakshan_logo.png')
+st.logo('assets/Neerakshan_logo.png', link='https://samudra-digital-twin.streamlit.app/', icon_image='assets/Neerakshan_logo.png')
 def stream_data(heading):
     if st.session_state.get('user_name') == None:
         heading=heading
