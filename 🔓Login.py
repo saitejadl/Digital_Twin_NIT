@@ -27,7 +27,7 @@ st.set_page_config(page_title="NIREEKSHAN - PROJECT DIGITAL TWIN",page_icon="ðŸŒ
 # }
 # </style>
 #     """, unsafe_allow_html=True)
-st.logo('Neerakshan_logo.png', link='https://samudra-digital-twin.streamlit.app/', icon_image='Neerakshan_logo.png')
+st.logo('Neerakshan Logo', link='https://samudra-digital-twin.streamlit.app/', icon_image='assets/Neerakshan_logo.png')
 def stream_data(heading):
     if st.session_state.get('user_name') == None:
         heading=heading
@@ -38,7 +38,7 @@ def stream_data(heading):
         time.sleep(0.01)
 _, __, ___= st.columns([3,2,3])
 
-__.image('Neerakshan_logo.png', caption=' ')
+__.image('assets/Neerakshan_logo.png', caption=' ')
 __.write_stream(stream_data("""THE BEST WAY TO PREDICT THE FUTURE \n IS TO CREATE IT."""))
 # c1,c2,c3 = st.columns([1,3,1])
 # c2.header("NIREEKSHAN - PROJECT DIGITAL TWIN")
