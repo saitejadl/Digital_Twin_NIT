@@ -1,24 +1,10 @@
 import folium
 # from folium.plugins import Draw
 import streamlit as st
-import streamlit.components.v1 as components
 from streamlit_folium import st_folium
 import time
-# background_html = """
-# <style>
-# body {
-# background-image: url('assets/bg.jpg');
-# background-size: cover;
-# }
-# </style>
-# """
 
-# components.html(background_html, height=100)
-# st.set_page_config(page_title="NIREEKSHAN - PROJECT DIGITAL TWIN",page_icon="🌎",layout="wide", initial_sidebar_state="collapsed" if st.session_state.get("logged_in")!=True else "auto")
-st.markdown("""<style>.stApp {background-image: url('assets/bg.jpg');background-size: cover;}</style>""", unsafe_allow_html=True)
-
-
-
+st.set_page_config(page_title="NIREEKSHAN - PROJECT DIGITAL TWIN",page_icon="🌎",layout="wide", initial_sidebar_state="collapsed" if st.session_state.get("logged_in")!=True else "auto")
 
 st.logo('assets/Neerakshan_logo.png', link='https://samudra-digital-twin.streamlit.app/', icon_image='assets/Neerakshan_logo.png')
 def stream_data(heading):
