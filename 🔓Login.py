@@ -14,7 +14,7 @@ background-size: cover;
 """
 
 components.html(background_html, height=100)
-st.set_page_config(page_title="NIREEKSHAN - PROJECT DIGITAL TWIN",page_icon="🌎",layout="wide", initial_sidebar_state="collapsed" if st.session_state.get("logged_in")!=True else "auto")
+# st.set_page_config(page_title="NIREEKSHAN - PROJECT DIGITAL TWIN",page_icon="🌎",layout="wide", initial_sidebar_state="collapsed" if st.session_state.get("logged_in")!=True else "auto")
 # st.markdown("""<style>.stApp {background-image: url('assets/bg.jpg');background-size: cover;}</style>""", unsafe_allow_html=True)
 
 
