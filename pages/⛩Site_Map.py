@@ -160,7 +160,7 @@ import google.generativeai as genai
 st.set_page_config(page_title="NIREEKSHAN - Architecture",page_icon="⛩",layout="wide", initial_sidebar_state="collapsed", menu_items=None)
 
 _, __,___, logout= st.columns([1,10,15,2])
-_.image( use_column_width = 'never', width = 50,image=rf'assets\{st.session_state["user_name"]}.png')
+_.image( use_column_width = 'never', width = 50,image=rf'assets/{st.session_state["user_name"]}.png')
 __.subheader(rf"Welcome {st.session_state['user_name']}")
 ___.image("assets/Neerakshan_logo.png",width = 180)
 st.markdown("""<hr style="height:2px;margine:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
