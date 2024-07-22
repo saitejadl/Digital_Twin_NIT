@@ -228,7 +228,7 @@ if st.session_state.get('password')!=None:
                     st.switch_page(rf"pages/🌍3d view.py")
             with col[2]:
                 if st.button("Street View",type="primary"):
-                    st.components.v1.html(f"<script>window.open('{street.get(next((k for k, v in loc.items() if v == [output["last_object_clicked"]['lat'],output["last_object_clicked"]['lng']]), None))}');</script>")
+                    st.components.v1.html(f"<script>window.open('{street.get(next((k for k, v in loc.items() if v == [output["last_object_clicked"]["lat"],output["last_object_clicked"]["lng"]]), None))}');</script>")
                     # st.markdown(f'<meta http-equiv="refresh" content="0; url={street.get(next((k for k, v in loc.items() if v == [output["last_object_clicked"]['lat'],output["last_object_clicked"]['lng']]), None))}">', unsafe_allow_html=True)
 
                     
