@@ -198,7 +198,7 @@ if st.session_state.get('password')!=None:
         "Kuniyil Kadavu Bridge": "The Kuniyil Kadavu Bridge is an important structure in Kozhikode district, Kerala. It connects the town of Atholi to National Highway 66 and is recognized as the longest bridge in the district1. The bridge is part of the state highway to Kuttiyadi and plays a significant role in the connectivity of the region"
         }
 
-        _2.write(r"Please select any geographical location to view the architecture")
+        # _2.write(r"Please select any geographical location to view the architecture")
         st.session_state['locations'] = loc
         # progress_text = "Operation in progress. Please wait."
         # my_bar = st.progress(0, text=progress_text)
