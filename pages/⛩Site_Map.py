@@ -222,7 +222,7 @@ if st.session_state.get('password')!=None:
             st.container(border=True).metric(label="***Name***", value=next((k for k, v in loc.items() if v == [output["last_object_clicked"]['lat'],output["last_object_clicked"]['lng']]), None))
             st.container(border=True).metric(label="***Lattitude***", value=output["last_object_clicked"]['lat'])
             st.container(border=True).metric(label="***Longitude***", value=output["last_object_clicked"]['lng'])
-            col = st.columns([1,3,2])
+            col = st.columns([1,2,2])
             with col[0]:
                 if st.button("3D View",type="primary"):
                     st.switch_page(rf"pages/🌍3d view.py")
