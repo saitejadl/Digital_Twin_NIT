@@ -52,7 +52,7 @@
 #         col2.metric(label="***Longitude***", value=output["last_object_clicked"]['lng'])
 #         col3.metric(label="***Name***", value=next((k for k, v in loc.items() if v == [output["last_object_clicked"]['lat'],output["last_object_clicked"]['lng']]), None))
 #         st.write(des[st.session_state['loc']])
-#         col = st.columns([2,1,2])
+#         col = st.columns([1,2,1])
 #         with col[1]:
 #             if st.button("3D View",type="primary", use_container_width=True):
 #                 st.switch_page(rf"pages/🌍3d view.py")
