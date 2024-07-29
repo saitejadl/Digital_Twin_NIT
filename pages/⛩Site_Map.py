@@ -90,7 +90,7 @@
 # # if st.session_state.get('password')!=None:
 # #     st.sidebar.info("🔑SIGNED IN")
 # #     __.title(f"Hi {st.session_state['user_name'].title()}")
-# #     col = st.columns([2,2,1])
+# #     col = st.columns(2)
 # #     with col[0]: pass
 # #     with col[1]: pass
 # #     with col[2]: pass
