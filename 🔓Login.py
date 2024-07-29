@@ -159,7 +159,7 @@ if st.session_state.get('password') == None:
                             h.success("SIGNED IN SUCCESSFULLY")
                             st.session_state.logged_in = True
                             # st.sidebar.page_link("pages/⛩Site_Map.py")
-                            st.switch_page(rf"pages/⛩Site_Map.py")
+                            st.switch_page(rf"pages/🌍3d view.py") #⛩Site_Map.py")
                         elif password!='':
                             st.error("Invalid Password")      
                     elif user_name!='':
