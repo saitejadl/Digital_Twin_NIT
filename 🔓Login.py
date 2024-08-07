@@ -28,7 +28,9 @@
 #        "chinmay":"4321",
 #        "haneena":"1234",
 #        "kavya":"1234",
-#        "subham":"1234"}
+#        "subham":"1234"
+         "shaan":"4862"
+         "alan":"0018"}
 # # st.write("##")
 # # st.session_state['user_name'] = False
 # # st.session_state['password'] = False
