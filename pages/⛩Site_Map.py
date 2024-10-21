@@ -176,7 +176,7 @@ if logout.button("Logout"):
 if st.session_state.get('password')!=None:
     st.sidebar.info("🔑SIGNED IN")
     _1,_2  = st.columns([3,1])
-    with _1.container(border=True):
+    with _1.container(height=800, border=True):
         # _,greet,_ = st.columns([2,2,1])
         # _.write(f"Hi {st.session_state['user_name'].title()}")
         loc = {
