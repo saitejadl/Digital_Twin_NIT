@@ -225,7 +225,7 @@ if st.session_state.get('password')!=None:
             col = st.columns(2)
             with col[0]:
                 if st.button("3D View",type="primary"):
-                    st.switch_page(rf"pages/🌍3D View.py")
+                    st.switch_page(rf"pages/🌍3D view.py")
             with col[1]:
                 if st.button("Street View",type="primary"):
                     st.components.v1.html(f"<script>window.open('{street.get(next((k for k, v in loc.items() if v == [output['last_object_clicked']['lat'],output['last_object_clicked']['lng']]), None))}');</script>")
