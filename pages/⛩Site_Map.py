@@ -239,7 +239,7 @@ if st.session_state.get('password')!=None:
         def chat():
             
             try:
-                genai.configure()
+                genai.configure(api_key=API_KEY)
                 model = genai.GenerativeModel("gemini-pro")
                 chat = model.start_chat(history=[])
                 prompt = st.chat_input("Say something", on_submit= None)
