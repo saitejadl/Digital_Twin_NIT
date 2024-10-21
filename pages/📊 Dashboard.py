@@ -26,7 +26,7 @@ if st.session_state.get('password')!=None:
         chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["Load Capacity", "Bearing Capacity", "Yield Strength"])
         x1.line_chart(chart_data)
         x2.line_chart(chart_data, x="Load Capacity", y=["Bearing Capacity", "Yield Strength"], color=["#FF0000", "#0000FF"])
-        st.scatter_chart(chart_data,x="Load Capacity", y=["Bearing Capacity", "Yield Strength"],size='c',color=['#FF0000', '#0000FF'])# Optional)
+        st.scatter_chart(chart_data,x="Load Capacity", y=["Bearing Capacity", "Yield Strength"],size="Yield Strength",color=['#FF0000', '#0000FF'])# Optional)
         chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["Deterioration rate", "Rework rate", "Accident rate"])
         st.bar_chart(chart_data)
     else:
