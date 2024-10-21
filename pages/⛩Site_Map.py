@@ -240,6 +240,7 @@ if st.session_state.get('password')!=None:
             
             try:
                 API_KEY=st.text_input("Enter your API key:", type="password")
+                st.write(API_KEY)
                 if API_KEY!=None:
                     genai.configure(api_key=API_KEY)
                     model = genai.GenerativeModel("gemini-pro")
@@ -250,6 +251,8 @@ if st.session_state.get('password')!=None:
                     if prompt and prompt.endswith('?'):
                         response = chat.send_message(instruction+prompt)
                         st.markdown(response.text)
+                else:
+                    st.info("You need to select a site")
             except:
                 st.info("You need to select a site")
         chat()
