@@ -30,8 +30,8 @@ if st.session_state.get('password')!=None:
         chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
         st.bar_chart(chart_data)
     else:
-            st.header("Please select any Architecture from Architecture page and come back here for a 3d view of the architecture")
-            st.warning("NO SITE WAS SELECTED")
+        st.header("Please select any Architecture from Architecture page and come back here for a 3d view of the architecture")
+        st.warning("NO SITE WAS SELECTED")
 else:
     st.header("Please signin and visit this page again to view the owned assets")
     st.info("Needed Signin for authentication redirecting to signin page in few seconds")
