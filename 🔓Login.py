@@ -85,7 +85,7 @@
 import streamlit as st
 import time
 
-st.set_page_config(page_title="NIREEKSHAN - PROJECT DIGITAL TWIN",page_icon="🌎",layout="wide", initial_sidebar_state="collapsed" if st.session_state.get("logged_in")!=True else "auto")
+st.set_page_config(page_title="DIGITAL TWIN AI",page_icon="🌎",layout="wide", initial_sidebar_state="collapsed" if st.session_state.get("logged_in")!=True else "auto")
 
 st.logo('assets/Neerakshan_logo.png', link='https://samudra-digital-twin.streamlit.app/', icon_image='assets/Neerakshan_logo.png')
 
