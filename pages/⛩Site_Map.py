@@ -222,10 +222,10 @@ if st.session_state.get('password')!=None:
             st.container(border=True).metric(label="***Name***", value=next((k for k, v in loc.items() if v == [output["last_object_clicked"]['lat'],output["last_object_clicked"]['lng']]), None))
             st.container(border=True).metric(label="***Lattitude***", value=output["last_object_clicked"]['lat'])
             st.container(border=True).metric(label="***Longitude***", value=output["last_object_clicked"]['lng'])
-            col = st.columns(2)
+            col = st.columns([0.6,0.4])
             with col[0]:
                 if st.button("3D View",type="primary"):
-                    st.switch_page(rf"pages/🌍3D view.py")
+                    st.switch_page(rf"pages/🌍3d view.py")
             with col[1]:
                 if st.button("Street View",type="primary"):
                     st.components.v1.html(f"<script>window.open('{street.get(next((k for k, v in loc.items() if v == [output['last_object_clicked']['lat'],output['last_object_clicked']['lng']]), None))}');</script>")
