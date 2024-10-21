@@ -23,11 +23,11 @@ if st.session_state.get('password')!=None:
         st.title(st.session_state['loc']+" Analytics")
         x1,x2 = st.columns([1,2])
         y1,y2 = st.columns([2,1])
-        chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["Load Capacity", "Bearing Capacity", "Yield Strength"])
+        chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
         x1.line_chart(chart_data)
         x2.line_chart(chart_data, x="a", y=["b", "c"], color=["#FF0000", "#0000FF"])
         st.scatter_chart(chart_data,x='a',y=['b', "c"],size='c',color=['#FF0000', '#0000FF'])# Optional)
-        chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["Deterioration rate", "Rework rate", "Accident rate"])
+        chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
         st.bar_chart(chart_data)
     else:
             st.header("Please select any Architecture from Architecture page and come back here for a 3d view of the architecture")
@@ -37,3 +37,16 @@ else:
     st.info("Needed Signin for authentication redirecting to signin page in few seconds")
     time.sleep(10)
     st.switch_page(rf"🔓Login.py")
+
+
+        st.title(st.session_state['loc']+" Analytics")
+        x1,x2 = st.columns([1,2])
+        y1,y2 = st.columns([2,1])
+        chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
+        x1.line_chart(chart_data)
+        x2.line_chart(chart_data, x="a", y=["b", "c"], color=["#FF0000", "#0000FF"])
+        st.scatter_chart(chart_data,x='a',y=['b', "c"],size='c',color=['#FF0000', '#0000FF'])# Optional)
+        chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
+        st.bar_chart(chart_data)
+    else:
+            st.header("Please select any Architecture from Architecture page and come back here for a 3d view of the architecture")
