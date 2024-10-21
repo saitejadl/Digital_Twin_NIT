@@ -249,7 +249,7 @@ if st.session_state.get('password')!=None:
         
                     if prompt:
                         response = chat.send_message(prompt)
-                        with st.container():
+                        with st.container(height=50, border=True):
                             st.markdown(response.text)
                 else:
                     st.info("You need to select a site")
