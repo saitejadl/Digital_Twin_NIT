@@ -121,7 +121,7 @@ _, __, ___= st.columns([3,2,3])
 
 __.image('assets/Neerakshan_logo.png', caption=' ')
 
-__.write_stream(stream_data("""THE BEST WAY TO PREDICT THE FUTURE \n IS TO CREATE IT."""))
+__.write_stream(stream_data("""THE FUTURE OF DATA-DRIVEN DECISION MAKING"""))
 # c1,c2,c3 = st.columns([1,3,1])
 # c2.header("NIREEKSHAN - PROJECT DIGITAL TWIN")
 # c2.write_stream(stream_data("THE BEST WAY TO PREDICT THE FUTURE IS TO CREATE IT."))
