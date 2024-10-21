@@ -176,7 +176,7 @@ if logout.button("Logout"):
 if st.session_state.get('password')!=None:
     st.sidebar.info("🔑SIGNED IN")
     _1,_2  = st.columns([3,1])
-    with _1.container(height=750, border=True):
+    with _1.container(height=790, border=True):
         # _,greet,_ = st.columns([2,2,1])
         # _.write(f"Hi {st.session_state['user_name'].title()}")
         loc = {
@@ -211,7 +211,7 @@ if st.session_state.get('password')!=None:
         for i,j in list(zip(loc.keys(),loc.values())):
             #icon=folium.Icon(color=random.choice(['red', 'blue', 'green', 'yellow']))
             folium.Marker(j, popup=f"<span style='font-size: 10px; color: gray'>{i}\n{j}</span>", tooltip=i).add_to(m)
-        output = st_folium(m, width='100%', height=750, returned_objects=["last_object_clicked"])
+        output = st_folium(m, width='100%', height=790, returned_objects=["last_object_clicked"])
     # with _2.expander("Chat"):
     st.session_state['last_object_clicked'] = output
     if output.get('last_object_clicked')!=None:
