@@ -155,7 +155,7 @@ import streamlit as st
 from streamlit_folium import st_folium
 from PIL import Image
 import time
-# import google.generativeai as genai
+import google.generativeai as genai
 
 st.set_page_config(page_title="NIREEKSHAN - Architecture",page_icon="⛩",layout="wide", initial_sidebar_state="collapsed", menu_items=None)
 
@@ -238,22 +238,22 @@ if st.session_state.get('password')!=None:
         @st.experimental_fragment
         def chat():
             
-            # try:
-                # API_KEY=st.text_input("Enter your API key:", type="password")
-                # if API_KEY!=None:
-            genai.configure(api_key="AIzaSyCNRJB1jvydFXjzJBZyXfs9Civ_6H_Abnc")
-            model = genai.GenerativeModel("gemini-pro")
-            chat = model.start_chat(history=[])
-            prompt = st.chat_input("Say something", on_submit= None)
-            instruction = "Respond shaply to the asked question briefly and only about"+next((k for k, v in loc.items() if v == [output["last_object_clicked"]['lat'],output["last_object_clicked"]['lng']]), None)+". Should not to provide any other information apart from specified topic. if you did not get the proper question about specified question just give me answer as 'I donot hhave access to the requested information'"
-
-            if prompt and prompt.endswith('?'):
-                response = chat.send_message(instruction+prompt)
-                st.markdown(response.text)
-                # else:
-                #     st.info("You need to select a site")
-            # except:
-            #     st.info("You need to select a site")
+            try:
+                API_KEY=st.text_input("Enter your API key:", type="password")
+                if API_KEY!=None:
+                    genai.configure(api_key="AIzaSyCNRJB1jvydFXjzJBZyXfs9Civ_6H_Abnc")
+                    model = genai.GenerativeModel("gemini-pro")
+                    chat = model.start_chat(history=[])
+                    prompt = st.chat_input("Say something", on_submit= None)
+                    instruction = "Respond shaply to the asked question briefly and only about"+next((k for k, v in loc.items() if v == [output["last_object_clicked"]['lat'],output["last_object_clicked"]['lng']]), None)+". Should not to provide any other information apart from specified topic. if you did not get the proper question about specified question just give me answer as 'I donot hhave access to the requested information'"
+        
+                    if prompt and prompt.endswith('?'):
+                        response = chat.send_message(instruction+prompt)
+                        st.markdown(response.text)
+                else:
+                    st.info("You need to select a site")
+            except:
+                st.info("You need to select a site")
         chat()
     # try:
     #     row1 = st.columns(3)
