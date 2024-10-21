@@ -245,10 +245,10 @@ if st.session_state.get('password')!=None:
                     model = genai.GenerativeModel("gemini-pro")
                     chat = model.start_chat(history=[])
                     prompt = st.chat_input("Say something", on_submit= None)
-                    instruction = "Respond sharply to the asked question with in few lines as possible as you can"+next((k for k, v in loc.items() if v == [output["last_object_clicked"]['lat'],output["last_object_clicked"]['lng']]), None)+". Should not to provide any other information apart from specified topic. if you did not get the proper question about specified question just give me answer as 'I donot have access to the requested information'"
+                    # instruction = "Respond sharply to the asked question with in few lines as possible as you can"+next((k for k, v in loc.items() if v == [output["last_object_clicked"]['lat'],output["last_object_clicked"]['lng']]), None)+". Should not to provide any other information apart from specified topic. if you did not get the proper question about specified question just give me answer as 'I donot have access to the requested information'"
         
-                    if prompt and prompt.endswith('?'):
-                        response = chat.send_message(instruction+prompt)
+                    if prompt:
+                        response = chat.send_message(prompt)
                         st.markdown(response.text)
                 else:
                     st.info("You need to select a site")
