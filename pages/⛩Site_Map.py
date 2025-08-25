@@ -160,7 +160,7 @@ import google.generativeai as genai
 st.set_page_config(page_title="NIREEKSHAN - Architecture",page_icon="⛩",layout="wide", initial_sidebar_state="collapsed", menu_items=None)
 
 _, __,___, logout= st.columns([1,10,15,2])
-_.image( use_column_width = 'never', width = 50,image=rf'assets/{st.session_state["user_name"]}.png')
+_.image( use_container_width = 'never', width = 50,image=rf'assets/{st.session_state["user_name"]}.png')
 __.subheader(rf"Welcome {st.session_state['user_name']}")
 ___.image("assets/Neerakshan_logo.png",width = 180)
 st.markdown("""<hr style="height:2px;margine:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
@@ -211,6 +211,7 @@ if st.session_state.get('password')!=None:
         for i,j in list(zip(loc.keys(),loc.values())):
             #icon=folium.Icon(color=random.choice(['red', 'blue', 'green', 'yellow']))
             folium.Marker(j, popup=f"<span style='font-size: 10px; color: gray'>{i}\n{j}</span>", tooltip=i).add_to(m)
+            folium.Marker(j, popup=f"<span style='font-size: 10px; color: gray'>{i}\n{j}</span>", tooltip=i).add_to(m)
         output = st_folium(m, width='100%', height=790, returned_objects=["last_object_clicked"])
     # with _2.expander("Chat"):
     st.session_state['last_object_clicked'] = output
@@ -235,7 +236,7 @@ if st.session_state.get('password')!=None:
     else:
         _2.write(r"Please select any geographical location to view the architecture")
     with _2.chat_message(name='Chat', avatar=':material/settings_accessibility:'):
-        @st.experimental_fragment
+        @st.fragment
         def chat():
             
             try:
@@ -324,3 +325,4 @@ if st.session_state.get('password')!=None:
 else:
     st.header("Please signin and visit this page again to view the owned assets")
     st.info("Needed Signin for authentication")
+
