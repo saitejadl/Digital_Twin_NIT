@@ -29,24 +29,24 @@ if st.session_state.get('password')!=None:
                     "Kuniyil Kadavu Bridge": """<div class="sketchfab-embed-wrapper"> <iframe title="Bridge" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="100%" height="800" src="https://sketchfab.com/models/b95a1cf88cae49ada50f9264cf51d43d/embed?autostart=1&preload=1&ui_theme=dark"> </iframe> </div>"""
                     }
             # if st.session_state.get('last_object_clicked')['last_object_clicked'] == 
-            html = loc[st.session_state['loc']]
-            st.markdown(html, unsafe_allow_html=True)
-            st.write("---")
+            # html = loc[st.session_state['loc']]
+            # st.markdown(html, unsafe_allow_html=True)
+            # st.write("---")
 
-            # uploaded_file = st.sidebar.file_uploader("Upload a 3D model", type=["obj", "stl", "ply"])
-            # if uploaded_file==None:
-            #     uploaded_file = rf'C:\TEJA\Project2\3d models\Gemstone.ply'
-            # else:
-            #     uploaded_file = uploaded_file.name
-            # plotter = pv.Plotter(window_size=[1000,500])
-            # mesh = pv.read(uploaded_file)
-            # plotter.clear()
-            # plotter.add_mesh(mesh, cmap='rgb', line_width=1, label="Kallai Bridge")
-            # plotter.add_scalar_bar()
-            # plotter.add_title("Gem", color="black", font_size=14)
-            # plotter.view_isometric()
-            # plotter.background_color = 'lightgray'
-            # stpyvista(plotter, use_container_width=True, panel_kwargs=dict(orientation_widget = True),horizontal_align='center')
+            uploaded_file = st.sidebar.file_uploader("Upload a 3D model", type=["obj", "stl", "ply"])
+            if uploaded_file==None:
+                uploaded_file = rf'C:\TEJA\Project2\3d models\Gemstone.ply'
+            else:
+                uploaded_file = uploaded_file.name
+            plotter = pv.Plotter(window_size=[1000,500])
+            mesh = pv.read(uploaded_file)
+            plotter.clear()
+            plotter.add_mesh(mesh, cmap='rgb', line_width=1, label="Kallai Bridge")
+            plotter.add_scalar_bar()
+            plotter.add_title("Gem", color="black", font_size=14)
+            plotter.view_isometric()
+            plotter.background_color = 'lightgray'
+            stpyvista(plotter, use_container_width=True, panel_kwargs=dict(orientation_widget = True),horizontal_align='center')
             col4, col5, col6= st.columns(3)
             col4.metric(label= "AREA in mtr sq", value="96747", delta="-676")
             col5.metric(label="MASS in lbs", value="757889", delta="56")
@@ -68,3 +68,4 @@ else:
     st.info("Needed Signin for authentication redirecting to signin page in few seconds.")
     time.sleep(10)
     st.switch_page(rf"🔓Login.py")
+
